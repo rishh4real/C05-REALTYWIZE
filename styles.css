@@ -62,7 +62,14 @@ a {
   align-items: center;
   gap: 0;
   width: max-content;
-  height: 52px;
+  height: 56px;
+}
+
+.brand-logo {
+  width: clamp(190px, 18vw, 260px);
+  height: auto;
+  max-height: 56px;
+  object-fit: contain;
 }
 
 .brand-word {
@@ -253,6 +260,7 @@ h1 {
   font-size: clamp(58px, 8vw, 112px);
   font-weight: 700;
   text-align: left;
+  transform: translateX(clamp(24px, 4vw, 74px));
 }
 
 .hero-title-line {
@@ -1204,6 +1212,11 @@ p {
     height: 46px;
   }
 
+  .brand-logo {
+    width: clamp(150px, 48vw, 210px);
+    max-height: 46px;
+  }
+
   .brand-word {
     font-size: 1.35rem;
   }
@@ -1226,6 +1239,7 @@ p {
     margin-right: auto;
     margin-left: auto;
     font-size: clamp(2.75rem, 10.5vw, 3.45rem);
+    transform: none;
   }
 
   .hero-content p:not(.eyebrow) {
