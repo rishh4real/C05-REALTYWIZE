@@ -243,7 +243,7 @@ h1 {
 
 .hero-title {
   display: grid;
-  justify-items: center;
+  justify-items: start;
   width: max-content;
   max-width: 100%;
   margin-right: auto;
@@ -252,7 +252,7 @@ h1 {
   font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
   font-size: clamp(58px, 8vw, 112px);
   font-weight: 700;
-  text-align: center;
+  text-align: left;
 }
 
 .hero-title-line {
@@ -265,7 +265,7 @@ h1 {
   display: flex;
   align-items: baseline;
   column-gap: 0.18em;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .hero-title .morph-word-wrap {
