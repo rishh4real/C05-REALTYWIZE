@@ -12,7 +12,7 @@
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=20260912ab" />
+    <link rel="stylesheet" href="styles.css?v=20260912am" />
   </head>
   <body>
     <header class="site-header">
@@ -20,6 +20,7 @@
         <img class="brand-logo" src="assets/images/navbar-realtywize-full-logo.png" alt="Realtywize A Realty Co." />
       </a>
       <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
+        <span></span>
         <span></span>
         <span></span>
       </button>
@@ -33,15 +34,15 @@
     </header>
 
     <main>
-      <section class="page-hero">
-        <img src="assets/images/hero-airport-plots-1920.webp" srcset="assets/images/hero-airport-plots-1280.webp 1280w, assets/images/hero-airport-plots-1920.webp 1920w" sizes="100vw" alt="Planned land development near airport corridor" fetchpriority="high" decoding="async" />
-        <div>
+      <section class="page-hero page-hero--about">
+        <img src="assets/images/about-land-clarity-hero-1920.webp" srcset="assets/images/about-land-clarity-hero-1280.webp 1280w, assets/images/about-land-clarity-hero-1920.webp 1920w" sizes="100vw" alt="" fetchpriority="high" decoding="async" />
+        <div class="visually-hidden">
           <p class="eyebrow">About Realtywize</p>
           <h1>Land decisions need clarity, timing, and local confidence.</h1>
         </div>
       </section>
 
-      <section class="section split-section">
+      <section class="section split-section about-work-section">
         <div class="section-copy">
           <p class="eyebrow">What We Do</p>
           <h2>We simplify land buying for people who want fewer surprises.</h2>
@@ -67,25 +68,66 @@
         </div>
       </section>
 
+      <section class="section founder-section">
+        <div class="section-copy">
+          <p class="eyebrow">Founder</p>
+          <h2>Akash Varma</h2>
+          <p>
+            Akash Varma leads Realtywize with a clear focus on practical land guidance,
+            grounded site selection, and smoother decisions for serious buyers.
+          </p>
+        </div>
+        <div class="founder-video-frame">
+          <video class="founder-video" src="assets/videos/founder-akash-varma-medium.mp4" autoplay muted loop playsinline preload="metadata"></video>
+          <button class="video-mute-toggle" type="button" aria-label="Unmute founder video" aria-pressed="false">Unmute</button>
+        </div>
+      </section>
+
       <section class="section section--soft">
         <div class="section-heading section-heading--center">
           <p class="eyebrow">Our Promise</p>
           <h2>Practical advice before polished sales talk.</h2>
         </div>
-        <div class="feature-grid">
+        <div class="feature-grid promise-grid">
           <article>
+            <span class="promise-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" role="img">
+                <circle cx="12" cy="12" r="7"></circle>
+                <circle cx="12" cy="12" r="2.5"></circle>
+                <path d="M12 2v3M12 19v3M2 12h3M19 12h3"></path>
+              </svg>
+            </span>
             <h3>Location Logic</h3>
             <p>We explain why a belt matters and what growth signals to watch.</p>
           </article>
           <article>
+            <span class="promise-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" role="img">
+                <path d="M14 2H7a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7Z"></path>
+                <path d="M14 2v5h5M9 14l2 2 4-5"></path>
+              </svg>
+            </span>
             <h3>Document Focus</h3>
             <p>We help buyers ask sharper questions before committing.</p>
           </article>
           <article>
+            <span class="promise-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" role="img">
+                <path d="M4 7h16M4 12h11M4 17h7"></path>
+                <path d="M17 14l2 2 3-4"></path>
+              </svg>
+            </span>
             <h3>Transparent Shortlists</h3>
             <p>Every option is shared with purpose, not just volume.</p>
           </article>
           <article>
+            <span class="promise-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" role="img">
+                <circle cx="12" cy="12" r="8"></circle>
+                <path d="M8.5 12.4l2.4 2.4 4.8-5.6"></path>
+                <path d="M16.5 17.5l2 2"></path>
+              </svg>
+            </span>
             <h3>Calm Execution</h3>
             <p>Site visits, negotiation, and registration are handled with structure.</p>
           </article>
@@ -141,6 +183,6 @@
       </div>
     </footer>
 
-    <script src="script.js?v=20260912ab"></script>
+    <script src="script.js?v=20260912am"></script>
   </body>
 </html>

@@ -78,10 +78,63 @@ const navToggle = document.querySelector(".nav-toggle");
 const siteNav = document.querySelector(".site-nav");
 
 if (navToggle && siteNav) {
-  navToggle.addEventListener("click", () => {
-    const isOpen = siteNav.classList.toggle("is-open");
+  function setNavOpen(isOpen) {
+    siteNav.classList.toggle("is-open", isOpen);
+    document.body.classList.toggle("nav-open", isOpen);
     navToggle.setAttribute("aria-expanded", String(isOpen));
+    navToggle.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
+  }
+
+  navToggle.addEventListener("click", () => {
+    setNavOpen(!siteNav.classList.contains("is-open"));
   });
+
+  siteNav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => setNavOpen(false));
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") setNavOpen(false);
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 980) setNavOpen(false);
+  });
+}
+
+const founderVideo = document.querySelector(".founder-video");
+const videoMuteToggle = document.querySelector(".video-mute-toggle");
+
+if (founderVideo && videoMuteToggle) {
+  function setFounderVideoMuted(isMuted) {
+    founderVideo.controls = false;
+    founderVideo.muted = isMuted;
+    founderVideo.defaultMuted = isMuted;
+    if (isMuted) {
+      founderVideo.setAttribute("muted", "");
+    } else {
+      founderVideo.removeAttribute("muted");
+      founderVideo.volume = 1;
+    }
+  }
+
+  function syncVideoMuteButton() {
+    videoMuteToggle.textContent = founderVideo.muted ? "Unmute" : "Mute";
+    videoMuteToggle.setAttribute("aria-label", founderVideo.muted ? "Unmute founder video" : "Mute founder video");
+    videoMuteToggle.setAttribute("aria-pressed", String(!founderVideo.muted));
+  }
+
+  videoMuteToggle.addEventListener("click", () => {
+    const shouldMute = !founderVideo.muted;
+    setFounderVideoMuted(shouldMute);
+    syncVideoMuteButton();
+    founderVideo.play().catch(() => syncVideoMuteButton());
+  });
+
+  founderVideo.addEventListener("volumechange", syncVideoMuteButton);
+  setFounderVideoMuted(true);
+  founderVideo.play().catch(() => {});
+  syncVideoMuteButton();
 }
 
 const contactForm = document.querySelector(".contact-form");
