@@ -76,6 +76,7 @@ if (morphWord && !reduceMotion.matches) {
 
 const navToggle = document.querySelector(".nav-toggle");
 const siteNav = document.querySelector(".site-nav");
+const stickyWhatsApp = document.querySelector(".sticky-whatsapp");
 
 if (navToggle && siteNav) {
   function setNavOpen(isOpen) {
@@ -100,6 +101,17 @@ if (navToggle && siteNav) {
   window.addEventListener("resize", () => {
     if (window.innerWidth > 980) setNavOpen(false);
   });
+}
+
+if (stickyWhatsApp) {
+  function syncStickyWhatsApp() {
+    const revealPoint = Math.min(420, window.innerHeight * 0.45);
+    stickyWhatsApp.classList.toggle("is-visible", window.scrollY > revealPoint);
+  }
+
+  syncStickyWhatsApp();
+  window.addEventListener("scroll", syncStickyWhatsApp, { passive: true });
+  window.addEventListener("resize", syncStickyWhatsApp);
 }
 
 const founderVideo = document.querySelector(".founder-video");
